@@ -37,8 +37,8 @@ def home():
 @app.route("/jogos", methods = ["GET"])
 def jogos():
     session.commit()
-    games = session.query(Jogo).all()
-    return render_template("index.html", games = games)
+    jogos_front = session.query(Jogo).all()
+    return render_template("index.html", jogos_front = jogos_front)
 
 if __name__ == "__main__":
     app.run(debug=True)
